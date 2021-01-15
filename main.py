@@ -13,7 +13,7 @@ dateFormatted = today.strftime("%d-%m-%Y")
 path = os.path.dirname(os.path.realpath(__file__))
 
 # Create the pdf name
-filename = path + "/docs/pemex-" + dateFormatted + ".pdf"
+filename = path + "/public/docs/pemex-" + dateFormatted + ".pdf"
 
 # Get the urls
 mainUrl = 'https://www.comercialrefinacion.pemex.com/portal/menu/controlador?Destino=menu_gral.jsp'
