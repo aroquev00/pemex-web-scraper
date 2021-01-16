@@ -6,9 +6,6 @@ var logger = require('morgan');
 
 var serveIndex = require('serve-index');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-
 var app = express();
 
 // view engine setup
@@ -20,12 +17,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-app.use(express.static(path.join(__dirname, 'public')));
+// Serve documents' folder as static directory
 app.use(express.static(path.join(__dirname, 'public/docs')));
 
+// Show directory when root is accessed
 app.use('/', serveIndex(__dirname + '/public/docs'));
-//app.use('/', indexRouter);
-app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
